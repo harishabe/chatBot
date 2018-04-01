@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
@@ -16,7 +16,8 @@ import { ChatService } from './service/chat.service';
   ],
   imports: [
     AppRoutingModule,
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [ChatService],
   bootstrap: [AppComponent]
