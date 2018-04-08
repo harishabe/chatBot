@@ -1,18 +1,19 @@
 <div class="bot">
   <div class="card" style="height: 470px;">
     <div class="card-header">
-      Featured
+      ChatBot
     </div>
     <div class="card-body">
-      <h5 class="card-title">Special title treatment</h5>
-      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+      <ul>
+          <li class="sent" *ngFor="let msg of message"> {{msg}}</li>
+      </ul>
     </div>
     <div class="card-footer text-muted">
-      <div class="">
-        <textarea class="message-input"></textarea>
-         <button class="btn btn-primary">Send</button>
-      </div>
+      <form (onsubmit)="sendMessage()">
+          <input type="text" [(ngModel)]="messageTxt" 
+           placeholder="Write your message..." class="message-input" name="content" />
+          <button type="submit" (click)="sendMessage()" class="btn btn-primary">Send</button>
+      </form>
     </div>
   </div>
 </div>
