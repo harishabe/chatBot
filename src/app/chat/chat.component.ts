@@ -18,11 +18,13 @@ export class ChatComponent implements OnInit {
   sendMessage() {
     this.message.push(this.messageTxt);
     this.messageTxt = "";
-    console.log('this.message',this.message);
-    // let value = 'HI';
-    // this.chatService.getResponse(value).subscribe(res => {
-    //   console.log('res', res);
-    // }, err => console.log(err))
+    //console.log('this.message',this.message);
+    let value = 'uk';
+    this.chatService.getResponse(value).subscribe(res => {
+      console.log('res', res.result.fulfillment.speech);
+    }, err => console.log(err))
+
+    
   }
 
 }
