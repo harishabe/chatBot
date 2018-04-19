@@ -24,11 +24,12 @@
   padding: 0;
   height:40px;
 }
-
-.sent{
+ul{
+    list-style-type: none;
+}
+/*.sent{
     border:1px solid green;
     padding: 15px;
     background-color: #435f7a;
     color: #e6eaea;
-        
-}
+}*/

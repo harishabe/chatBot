@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
-//import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
  
@@ -21,17 +20,10 @@ export class ChatService {
 
     let headers = new Headers();
     headers.append('Authorization',`Bearer ${this.token}`);
-    console.log('headersheaders',headers);
-    // return this.http
-    //   .post(`${this.baseURL}`,data,{headers: headers})
-      // .map(res => {
-      //   return res.json();
-      // })
        return this.http
       .post(`${this.baseURL}`, data, {headers: headers})
       .map(res => {
         return res.json()
       })
   }
-  
 }

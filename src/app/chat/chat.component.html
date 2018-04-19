@@ -3,16 +3,21 @@
     <div class="card-header">
       ChatBot
     </div>
-    <div class="card-body">
+    <div class="card-body" style="overflow-y: scroll;">
       <ul>
-          <li class="sent" *ngFor="let msg of message"> {{msg}}</li>
+        <li class="sent" *ngFor="let msg of messages">
+          <!--<img [src]="msg.avatar" class="avatar">-->
+          <div class="message">
+            {{msg.content}}
+          </div>
+        </li>
       </ul>
     </div>
     <div class="card-footer text-muted">
       <form (onsubmit)="sendMessage()">
-          <input type="text" [(ngModel)]="messageTxt" 
-           placeholder="Write your message..." class="message-input" name="content" />
-          <button type="submit" (click)="sendMessage()" class="btn btn-primary">Send</button>
+        <input type="text" [(ngModel)]="message.content" placeholder="Write your message..." class="message-input" name="content"
+        />
+        <button type="submit" (click)="sendMessage()" class="btn btn-primary">Send</button>
       </form>
     </div>
   </div>
