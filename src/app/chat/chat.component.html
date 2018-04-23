@@ -1,22 +1,20 @@
 <div class="bot">
   <div class="card" style="height: 470px;">
     <div class="card-header">
-      ChatBot
+      CHATBOT
     </div>
-    <div class="card-body" style="overflow-y: scroll;">
+    <div class="card-body chatlist" #chatlist>
       <ul>
-        <li class="sent" *ngFor="let msg of messages">
-          <!--<img [src]="msg.avatar" class="avatar">-->
-          <div class="message">
-            {{msg.content}}
-          </div>
+        <p *ngIf="errorMsg" class="sent error-msg">{{errorMsg}}</p>
+        <li *ngFor="let msg of messages">
+          <p *ngIf="msg.sent" class="replies">{{msg.sent}}</p>
+          <p *ngIf="msg.replies" class="sent">{{msg.replies}}</p>
         </li>
       </ul>
     </div>
     <div class="card-footer text-muted">
       <form (onsubmit)="sendMessage()">
-        <input type="text" [(ngModel)]="message.content" placeholder="Write your message..." class="message-input" name="content"
-        />
+        <input type="text" [(ngModel)]="userMsg.sent" placeholder="Write your message..." class="message-input text-box" name="content" />
         <button type="submit" (click)="sendMessage()" class="btn btn-primary">Send</button>
       </form>
     </div>
